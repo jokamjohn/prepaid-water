@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Prepaid - Water</title>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <!-- VueFire -->
+    <script src="https://cdn.jsdelivr.net/vuefire/1.0.0/vuefire.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <div class="container">
+        <div class="content">
+
+            <div class="col-md-12">
+                <div class="panel">
+                    <header class="panel-heading">
+                        Prepaid Water Metering and Management 
+
+                    </header>
+                    <div class="panel-body">
+
+                        <table class="table">
+                            <tr>
+                                <th>Date</th>
+                                <th>Meter Number</th>
+                                <th>Voucher Loaded</th>
+                                <th>Current Units</th>
+                            </tr>
+
+                            <tr v-for="item in items ">
+                                <td>
+                                    {{ timeConverter(item.time) }}
+                                </td>
+
+                                <td>
+                                    {{ item.meterNumber }}
+                                </td>
+
+
+                                <td>
+                                    {{ item.vouncher}}
+                                </td>
+
+                                <td>
+                                    {{ item.currentUnits }}
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
